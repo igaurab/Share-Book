@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserRegistrationActivity">
+
+    <ImageView
+        android:id="@+id/img_bookRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/registration_background"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scrollViewUserRegistration"
+        android:layout_marginBottom="-70dp"
+        android:text="User Registration"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp" />
+    <ScrollView
+        android:id="@+id/scrollViewUserRegistration"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/img_bookRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="30dp"
+            >
+            <EditText
+                android:id="@+id/user_firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:inputType="text"
+                android:layout_marginTop="10dp"
+                />
+            <EditText
+                android:id="@+id/user_lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:layout_marginTop="10dp"
+                />
+            <EditText
+                android:id="@+id/user_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:layout_marginTop="10dp"
+                />
+            <EditText
+                android:id="@+id/user_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact No"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                />
+            <Button
+                android:id="@+id/register"
+                android:layout_marginTop="40dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

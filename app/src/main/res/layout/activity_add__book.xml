@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add_Book"
+    android:background="@drawable/gradient_horizontal">
+
+    <include android:id="@+id/toolbarAddBook"
+        layout="@layout/toolbar_main"/>
+
+    <ImageButton
+        android:id="@+id/btn_sell"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle"
+        app:srcCompat="@drawable/ic_check_white_24dp"
+        android:layout_below="@+id/scrollViewAddBook"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="5dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_book_sellBook"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/book_front"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/white"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollViewAddBook"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/img_book_sellBook"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="30dp"
+            android:background="@drawable/view_rounded_corners"
+           >
+            <EditText
+                android:id="@+id/book_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Book Name"
+                android:textStyle="italic"
+                android:textColor="@color/purple"
+                android:maxLines="1"/>
+            <EditText
+                android:id="@+id/book_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Category"
+                android:textColor="@color/purple"
+                android:maxLines="1"/>
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Description"
+                android:textColor="@color/purple"
+                android:maxLines="5"/>
+            <EditText
+                android:id="@+id/book_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:autofillHints="Price"
+                android:textColor="@color/purple"
+                android:hint="Price"
+                android:maxLines="1"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
