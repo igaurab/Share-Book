@@ -4,7 +4,7 @@ public class Book {
     private String name;
     private String category;
     private String description;
-    private int price;
+    private String price;
     private String uid;
     private String img_url;
 
@@ -35,11 +35,11 @@ public class Book {
         this.description = description;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

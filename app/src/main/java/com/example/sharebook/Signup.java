@@ -23,7 +23,6 @@ public class Signup extends AppCompatActivity {
     Button btn_signup;
     TextInputEditText email,password;
     TextView toLoginActivity;
-    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

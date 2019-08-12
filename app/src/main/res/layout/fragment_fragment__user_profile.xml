@@ -28,6 +28,7 @@
                 app:civ_border_color="@color/purple"
                 />
             <TextView
+                android:id="@+id/profile_user_name"
                 android:layout_below="@id/img_userProfilePicture"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"

@@ -20,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class UserRegistrationActivity extends AppCompatActivity {
     EditText fname,lname,address,contact;
     Button register;
-
     User user;
 
     @Override
@@ -33,29 +32,36 @@ public class UserRegistrationActivity extends AppCompatActivity {
         address = findViewById(R.id.user_address);
         contact = findViewById(R.id.user_contact);
         register = findViewById(R.id.register);
+        user = new User();
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveUserDetails();
-                Intent intent = new Intent(UserRegistrationActivity.this,HomeActivity.class);
-                startActivity(intent);
             }
         });
     }
     public void saveUserDetails() {
         FirebaseAuth mAuth;
+        String uid;
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        DatabaseReference reference;
-        reference = FirebaseDatabase.getInstance().getReference();
-        user.setFname(fname.getText().toString().toLowerCase());
-        user.setLname(lname.getText().toString().toLowerCase());
-        user.setAddress(address.getText().toString().toLowerCase());
-        user.setContact(contact.getText().toString().toLowerCase());
-        user.setUid(currentUser.getUid());
-        user.setImg_url("null");
-        reference.child("users").child(currentUser.getUid()).setValue(user);
-        Log.d("UserReg", "saveUserDetails: At last");;
+        uid = currentUser.getUid();
+        if (uid != null) {
+            DatabaseReference reference;
+            reference = FirebaseDatabase.getInstance().getReference("users");
+            user.setFname(fname.getText().toString().toLowerCase());
+            user.setLname(lname.getText().toString().toLowerCase());
+            user.setAddress(address.getText().toString().toLowerCase());
+            user.setContact(contact.getText().toString().toLowerCase());
+            user.setUid(currentUser.getUid());
+            user.setImg_url("No Image Url");
+            reference.child(uid).setValue(user);
+
+            Intent intent = new Intent(UserRegistrationActivity.this,HomeActivity.class);
+            startActivity(intent);
+            Log.d("UserReg", "saveUserDetails: At last");;
+        }
+
     }
 }
